@@ -190,7 +190,7 @@ def enc(key, data, delta_flag):
 
     grids = temp_grids
 
-    # return data in a list of bytes list for each encrypted plaintext
+    # return data in a list of hexadecimal list for each encrypted plaintext
     int_stream = []
 
     for grid in grids:

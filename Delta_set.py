@@ -12,7 +12,7 @@ def delta_set():
                 #the first index is the active index which goes from 0 - 255
                 if (i == 0) and (j == 0):
                     grid[i].append(k)
-                #all the other indices are given the value of 0
+                #all the other indices are given the randomly generated value
                 else:
                     grid[i].append(rand_int)
         all.append(grid)
