@@ -268,26 +268,29 @@ last_round_key = temp
 # check if guessed key is last round key
 assert guessed_last_round_key == last_round_key
 
+# retrieve key from the 4 round keys
 for i in range(3, -1, -1):
+    # the last 12 bytes of the previous round key can be found by XOR'ing the bytes of the current round key
     guessed_key = []
     for j in range(15, 3, -1):
         guessed_key.append(guessed_last_round_key[j] ^ guessed_last_round_key[j - 4])
     guessed_key.reverse()
-
+    
+    # the first four bytes of the previous round key can be found by doing the key expansion on the last four bytes of the previous round key and xoring them with the first four bytes of the current round key
     rcon = [[1, 0, 0, 0]]
     for _ in range(1, 4):
         rcon.append([rcon[-1][0] * 2, 0, 0, 0])
         if rcon[-1][0] > 0x80:
             rcon[-1][0] ^= 0x11b
-
+    
+    # shiftRow, subBytes and applying round constant on the first 4 bytes of the previous round key
     last_column = guessed_key[8:12]
-    # Shift row step
     last_column_shift_row = shift_row(last_column)
-    # s-box look-up
     last_column_sbox_step = [lookup(b) for b in last_column_shift_row]
     last_column_rcon_step = [last_column_sbox_step[s]
                              ^ rcon[i][s] for s in range(len(last_column_shift_row))]
-
+    
+    # XOR'ing the manipulated last four bytes of the previous round key with the first four bytes of the current round key to get the first four bytes of the previous round key
     guessed_key.reverse()
     for k in range(3, -1, -1):
         guessed_key.append(guessed_last_round_key[k] ^ last_column_rcon_step[k])
@@ -295,4 +298,5 @@ for i in range(3, -1, -1):
     guessed_last_round_key = guessed_key
 obtained_key = guessed_last_round_key
 
+# check if retrieved key is the same as the original key
 assert bytearray(obtained_key) == key
