@@ -1,4 +1,3 @@
-#last round key: [[71, 149, 249, 253], [247, 53, 108, 5], [247, 62, 50, 141], [188, 3, 188, 253]]
 import binascii
 
 from s_box import reverse_lookup
