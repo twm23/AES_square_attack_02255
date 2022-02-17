@@ -20,7 +20,7 @@ def rev_last_round(guess, index, delta_set):
         rev_set.append(before_sub_byte)
     return rev_set
 
-# check if the
+# check if the guessed byte is correct
 def check_guess(rev_bytes):
     res = 0
     for i in rev_bytes:
