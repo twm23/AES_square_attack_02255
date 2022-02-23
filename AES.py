@@ -290,7 +290,7 @@ def main():
     # check if retrieved key is the same as the original key
     assert bytearray(obtained_key) == key
     if bytearray(obtained_key) == key:
-        print("Attack succesful!")
+        print("Attack successful!")
 
 if __name__ == "__main__":
     main()
