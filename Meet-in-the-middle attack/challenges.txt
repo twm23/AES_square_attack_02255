@@ -1,0 +1,34 @@
+Key size: 8 bits (the highest 56 bits are 0s)
+Plaintext-ciphertext pairs:
+[81c9 e6a0] -> [81c9 e6a0] 
+[aa12 97c7] -> [aa12 97c7] 
+[d230 b429] -> [d230 b429] 
+[00e5 5f7b] -> [00e5 5f7b] 
+
+Key size: 16 bits (the highest 48 bits are 0s)
+Plaintext-ciphertext pairs:
+[1190 d940] -> [1190 d940] 
+[8b34 448e] -> [8b34 448e] 
+[6758 b476] -> [6758 b476] 
+[9944 ccd4] -> [9944 ccd4] 
+
+Key size: 20 bits (the highest 44 bits are 0s)
+Plaintext-ciphertext pairs:
+[75da 62f6] -> [75da 62f6] 
+[3f56 8456] -> [3f56 8456] 
+[1c96 0b58] -> [1c96 0b58] 
+[5d7b c1f0] -> [5d7b c1f0] 
+
+Key size: 24 bits (the highest 40 bits are 0s)
+Plaintext-ciphertext pairs:
+[b7bb 416f] -> [b7bb 416f] 
+[632a 3b2b] -> [632a 3b2b] 
+[9395 6d46] -> [9395 6d46] 
+[8374 496b] -> [8374 496b] 
+
+Key size: 32 bits (the highest 32 bits are 0s)
+Plaintext-ciphertext pairs:
+[7806 fb3a] -> [7806 fb3a] 
+[cb87 d98c] -> [cb87 d98c] 
+[a0f6 8cae] -> [a0f6 8cae] 
+[1e6a ebcf] -> [1e6a ebcf] 
